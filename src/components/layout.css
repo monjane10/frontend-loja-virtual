@@ -1,0 +1,108 @@
+/* Estilo da Menubar (Barra superior) */
+.layout-menubar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000; /* Para garantir que a Menubar fique acima de outros elementos */
+    box-shadow: 0px 0.2px 0.2px rgba(0, 0, 0, 0.1); /* Sombra sutil para a Menubar */
+    background-color: #fff; /* Adiciona uma cor de fundo para a barra */
+}
+
+/* Estilo da Sidebar (Menu lateral) */
+.layout-sidebar {
+    position: fixed;
+    top: 4rem; 
+    left: 0;
+    bottom: 0;
+    width: 300px; 
+    background-color: #ffe3d8;
+    z-index: 900; 
+    padding-top: 1rem;
+    box-shadow: 0.2px 0px 0.2px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out; /* Transição suave ao esconder */
+}
+
+/* Conteúdo principal (ao lado da Sidebar) */
+.layout-content {
+    margin-left: 300px; 
+    padding: 2rem;
+    overflow-y: auto; 
+    height: calc(100vh - 4rem); 
+    flex-grow: 1;
+    transition: margin-left 0.3s ease-in-out; /* Transição suave ao ajustar o conteúdo */
+}
+
+/* Menu Item */
+.menu-item {
+    margin: 0.4rem 0;
+    padding: 0.4rem;
+    width: 100%;
+    text-align: left;
+    box-shadow: 0px 0.2px 0.2px rgba(0, 0, 0, 0.05);
+    display: block; /* Garante que os itens fiquem empilhados verticalmente */
+    background-color: transparent; /* Remove o fundo azul */
+    color: inherit; /* Mantém a cor do texto padrão */
+    text-decoration: none; /* Remove sublinhado */
+}
+
+.menu-item:hover {
+    background-color: #f0f0f0; /* Cor de fundo leve ao passar o mouse (opcional) */
+    color: #333; /* Cor do texto ao passar o mouse */
+}
+
+/* Estilo para categorias de menu */
+.menu-category h4 {
+    margin: 1rem 0;
+    color: #000;
+}
+
+/* Media Queries para Responsividade */
+
+/* Dispositivos pequenos - telas menores que 768px */
+@media (max-width: 768px) {
+    /* Sidebar se torna oculta ou colapsa */
+    .layout-sidebar {
+        width: 100%;
+        height: auto;
+        position: relative; /* Tornar a sidebar posicionada dentro do fluxo normal */
+        top: 0;
+        left: 0;
+        box-shadow: none; /* Remove a sombra */
+        display: none; /* Esconde a sidebar */
+    }
+
+    /* O conteúdo principal ocupa toda a largura disponível */
+    .layout-content {
+        margin-left: 0;
+        padding: 1rem;
+    }
+
+    /* Exemplo para mostrar a sidebar como um menu colapsável */
+    .layout-sidebar.open {
+        display: block; /* Exibe a sidebar quando ativada */
+    }
+}
+
+/* Dispositivos médios - telas entre 768px e 1024px */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .layout-sidebar {
+        width: 250px; /* Ajusta a largura da sidebar */
+        display: block; /* Mantém a sidebar visível */
+    }
+
+    .layout-content {
+        margin-left: 250px; /* Ajusta o conteúdo para ao lado da sidebar */
+    }
+}
+
+/* Dispositivos grandes - telas maiores que 1024px */
+@media (min-width: 1024px) {
+    .layout-sidebar {
+        width: 300px; /* Largura maior para telas grandes */
+    }
+
+    .layout-content {
+        margin-left: 300px; /* Conteúdo ao lado da sidebar */
+    }
+}

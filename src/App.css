@@ -1,0 +1,111 @@
+/* Importar o CSS do PrimeReact */
+@import 'primereact/resources/themes/lara-light-indigo/theme.css';
+@import 'primereact/resources/primereact.min.css';  
+@import 'primeicons/primeicons.css';  
+
+.dashboard {
+    padding: 20px;
+    background-color: #f4f4f4;
+    border-radius: 8px;
+}
+
+.stats-cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    margin-bottom: 10px;
+}
+
+.stats-cards .p-card {
+    box-shadow: 0 0.2px 0.2px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    padding: 1rem; 
+    background-color: #ffffff;
+    position: relative;
+    height: 150px; 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.stats-cards .p-card:hover {
+    box-shadow: 0 0.2px 0.2px rgba(0, 0, 0, 0.15);
+    transform: translateY(-2px);
+}
+
+/* Ícone no canto superior direito */
+.stats-cards .p-card .card-icon {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 2em; 
+    color: #42A5F5;
+}
+
+.stats-cards .p-card .card-content {
+    margin-top: 20px; 
+    font-size: 0.9em;
+    color: #333;
+}
+
+/* Ajuste de subtítulo e texto principal */
+.stats-cards .p-card .card-subtitle {
+    font-size: 0.8em;
+    color: #777;
+}
+
+.stats-cards .p-card p {
+    margin-top: 0px;
+    font-size: 0.8em;
+    color: #333;
+}
+
+/* Layout da seção de conteúdo */
+.content-sections {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 20px;
+    margin-bottom: 2rem;
+}
+
+.notifications-section {
+    margin-top: 20px;
+}
+
+.p-panel {
+    border-radius: 8px;
+    background-color: #ffffff;
+    box-shadow: 0 0.2px 0.2px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+}
+
+.p-panel .p-panel-header {
+    font-weight: bold;
+    font-size: 1.1em;
+    color: #333;
+}
+
+.p-inputtext {
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+.p-inputtext:focus {
+    border-color: #42A5F5;
+    box-shadow: 0 0 0.2px rgba(66, 165, 245, 0.4);
+}
+
+@media (max-width: 768px) {
+    .stats-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .content-sections {
+        grid-template-columns: 1fr;
+    }
+
+    .notifications-section {
+        margin-top: 10px;
+    }
+}
